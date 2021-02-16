@@ -9,9 +9,11 @@ class Price extends Model
 {
     use HasFactory;
 
+    protected $guarded = ['id'];
+
     //Relacion uno a muchos
     public function courses(){
-        return $this->('App\Models\Course');
+        return $this->hasMany('App\Models\Course');
     }
 
 
